@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SK Polymers — Premium PTFE, Teflon, Gaskets, Sheets, Rods & More</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { 
+      background-color: #f5f5f5; /* Light gray for background */
+      color: #333; /* Dark gray for text */
+      font-family: 'Poppins', sans-serif; 
+      scroll-behavior: smooth; 
+    }
+    .navbar { 
+      background-color: #000 !important; /* Black navbar */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+    }
+    .navbar-brand, .nav-link { 
+      color: #fff !important; /* White text for navbar */
+      font-weight: 600; 
+    }
+    .nav-link:hover { 
+      color: #ccc !important; /* Light gray on hover */
+    }
+    .hero { 
+      background-image: url(static/images/images.jpeg);
+      background-size: cover; 
+      background-position: center; 
+      color: #fff; /* White text for hero */
+      padding: 150px 0; 
+      text-align: center; 
+    }
+    .hero h1 { 
+      font-size: 3.5rem; 
+      font-weight: 700; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    }
+    .hero p { 
+      font-size: 1.5rem; 
+      margin-bottom: 30px; 
+    }
+    .btn-custom { 
+      background: #333; /* Dark gray button */
+      color: #fff; /* White text */
+      border-radius: 50px; 
+      padding: 12px 30px; 
+      font-weight: 600; 
+      transition: all 0.3s; 
+    }
+    .btn-custom:hover { 
+      background: #555; /* Slightly lighter gray on hover */
+      transform: translateY(-3px); 
+    }
+    .section-title { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      margin-bottom: 50px; 
+      position: relative; 
+      color: #000; /* Black for section titles */
+    }
+    .section-title::after { 
+      content: ''; 
+      width: 50px; 
+      height: 4px; 
+      background: #000; /* Black underline */
+      position: absolute; 
+      bottom: -10px; 
+      left: 50%; 
+      transform: translateX(-50%); 
+    }
+    .card { 
+      border: none; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+      transition: all 0.3s; 
+      background: #fff; /* White card background */
+    }
+    .card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+    }
+    .card-icon { 
+      font-size: 3rem; 
+      color: #000; /* Black icons */
+      margin-bottom: 20px; 
+    }
+    .gallery img { 
+      cursor: pointer; 
+      transition: all 0.3s; 
+      border-radius: 15px; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+      width: 100%; 
+      height: 250px; 
+      object-fit: cover; 
+    }
+    .gallery img:hover { 
+      transform: scale(1.05); 
+    }
+    .counter { 
+      font-size: 3rem; 
+      font-weight: 700; 
+      color: #000; /* Black for counters */
+    }
+    footer { 
+      background: #000; /* Black footer */
+      color: #fff; /* White text */
+      padding: 30px 0; 
+      text-align: center; 
+    }
+    .form-control { 
+      border-radius: 10px; 
+      border: 1px solid #666; /* Medium gray border */
+      padding: 15px; 
+      background: #fff; /* White input background */
+      color: #333; /* Dark gray text */
+    }
+    .form-control:focus { 
+      border-color: #000; /* Black border on focus */
+      box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25); 
+    }
+    /* Popup Modal */
+    .modal-content { 
+      border-radius: 15px; 
+      padding: 20px; 
+      background: #fff; /* White modal background */
+      color: #333; /* Dark gray text */
+    }
+    .modal-header { 
+      border: none; 
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">SK Polymers</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Premium PTFE & Teflon Solutions</h1>
+    <p>Your Trusted Partner for Gaskets, Sheets, Rods, Pipes, Bushes, and Custom Components</p>
+    <a href="#contact" class="btn btn-custom">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="py-5" id="products">
+  <div class="container text-center">
+    <h2 class="section-title">Our Premium Products</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-shield-alt card-icon"></i>
+          <h5 class="fw-bold">PTFE Gasket Sheets</h5>
+          <p>Durable, chemical-resistant sheets. Custom sizes for all industrial needs.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-bolt card-icon"></i>
+          <h5 class="fw-bold">PTFE Rods</h5>
+          <p>High-strength rods ideal for machined components and bearings.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-cogs card-icon"></i>
+          <h5 class="fw-bold">PTFE Pipes & Bushes</h5>
+          <p>Corrosion-resistant piping and bushings for demanding applications.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-5 bg-light" id="services">
+  <div class="container text-center">
+    <h2 class="section-title">Our Expert Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-cut card-icon"></i>
+          <h5 class="fw-bold">Custom Cutting</h5>
+          <p>Precision cutting of PTFE sheets, rods, and pipes to your exact specifications.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-truck card-icon"></i>
+          <h5 class="fw-bold">Bulk Orders</h5>
+          <p>Competitive pricing for bulk orders with fast and reliable dispatch.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-check-circle card-icon"></i>
+          <h5 class="fw-bold">Quality Assurance</h5>
+          <p>All products rigorously tested and certified for industrial standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="py-5" id="about">
+  <div class="container text-center">
+    <h2 class="section-title">About Us</h2>
+    <p class="mb-5 lead">SK Polymers is a leading supplier of high-quality PTFE & Teflon products for sealing, insulation, and wear-resistant applications. We prioritize precision, quality, and timely delivery across India.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="counter" data-target="10">0</div>
+        <p class="fw-bold">Years of Experience</p>
+      </div>
+      <div class="col-md-4">
+        <div class="counter" data-target="100">0</div>
+        <p class="fw-bold">Clients Served</p>
+      </div>
+      <div class="col-md-4">
+        <div class="counter" data-target="200">0</div>
+        <p class="fw-bold">Projects Completed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="py-5 bg-light" id="gallery">
+  <div class="container text-center">
+    <h2 class="section-title">Product Gallery</h2>
+    <div class="row g-4 gallery">
+      <div class="col-md-4"><img src="static/images/download.jpeg" class="img-fluid" alt="PTFE Gasket"></div>
+      <div class="col-md-4"><img src="static/images/download (1).jpeg" class="img-fluid" alt="PTFE Rods"></div>
+      <div class="col-md-4"><img src="static/images/images.jpeg" class="img-fluid" alt="PTFE Pipes"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="py-5" id="contact">
+  <div class="container text-center">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+          <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+          <input type="number" class="form-control mb-3" placeholder="Your Number" required> 
+          <input type="tel" class="form-control mb-3" placeholder="Your Phone" required>
+          <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn-custom w-100">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container"><p>© 2025 SK Polymers | All Rights Reserved | Designed with ❤️</p></div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <img id="lightboxImg" src="" class="img-fluid rounded">
+    </div>
+  </div>
+</div>  
+
+<!-- Enquiry Popup Modal -->
+<div class="modal fade" id="enquiryPopup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Quick Enquiry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+          <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+          <input type="number" class="form-control mb-3" placeholder="Your Number" required>
+          <textarea class="form-control mb-3" rows="3" placeholder="Tell us about your requirements"></textarea>
+          <button type="submit" class="btn btn-custom w-100">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / 200;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+
+  // Lightbox for Gallery
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightboxImg').src = img.src;
+      new bootstrap.Modal(document.getElementById('lightboxModal')).show();
+    });
+  });
+
+  // Show Enquiry Popup after 5 seconds
+  setTimeout(() => {
+    new bootstrap.Modal(document.getElementById('enquiryPopup')).show();
+  }, 5000);
+</script>
+</body>
+</html>
