@@ -1,140 +1,35 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SK Polymers offers premium PTFE, Teflon products including gaskets, sheets, rods, pipes, bushes, and custom components for industrial applications.">
+  <meta name="keywords" content="PTFE, Teflon, Gaskets, Sheets, Rods, Pipes, Bushes, Custom Components, Industrial Seals">
+  <meta name="author" content="SK Polymers">
   <title>SK Polymers — Premium PTFE, Teflon, Gaskets, Sheets, Rods & More</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { 
-      background-color: #f5f5f5; /* Light gray for background */
-      color: #333; /* Dark gray for text */
-      font-family: 'Poppins', sans-serif; 
-      scroll-behavior: smooth; 
-    }
-    .navbar { 
-      background-color: #000 !important; /* Black navbar */
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
-    }
-    .navbar-brand, .nav-link { 
-      color: #fff !important; /* White text for navbar */
-      font-weight: 600; 
-    }
-    .nav-link:hover { 
-      color: #ccc !important; /* Light gray on hover */
-    }
-    .hero { 
-      background-image: url(static/images/images.jpeg);
-      background-size: cover; 
-      background-position: center; 
-      color: #fff; /* White text for hero */
-      padding: 150px 0; 
-      text-align: center; 
-    }
-    .hero h1 { 
-      font-size: 3.5rem; 
-      font-weight: 700; 
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-    }
-    .hero p { 
-      font-size: 1.5rem; 
-      margin-bottom: 30px; 
-    }
-    .btn-custom { 
-      background: #333; /* Dark gray button */
-      color: #fff; /* White text */
-      border-radius: 50px; 
-      padding: 12px 30px; 
-      font-weight: 600; 
-      transition: all 0.3s; 
-    }
-    .btn-custom:hover { 
-      background: #555; /* Slightly lighter gray on hover */
-      transform: translateY(-3px); 
-    }
-    .section-title { 
-      font-size: 2.5rem; 
-      font-weight: 700; 
-      margin-bottom: 50px; 
-      position: relative; 
-      color: #000; /* Black for section titles */
-    }
-    .section-title::after { 
-      content: ''; 
-      width: 50px; 
-      height: 4px; 
-      background: #000; /* Black underline */
-      position: absolute; 
-      bottom: -10px; 
-      left: 50%; 
-      transform: translateX(-50%); 
-    }
-    .card { 
-      border: none; 
-      border-radius: 15px; 
-      overflow: hidden; 
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-      transition: all 0.3s; 
-      background: #fff; /* White card background */
-    }
-    .card:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
-    }
-    .card-icon { 
-      font-size: 3rem; 
-      color: #000; /* Black icons */
-      margin-bottom: 20px; 
-    }
-    .gallery img { 
-      cursor: pointer; 
-      transition: all 0.3s; 
-      border-radius: 15px; 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-      width: 100%; 
-      height: 250px; 
-      object-fit: cover; 
-    }
-    .gallery img:hover { 
-      transform: scale(1.05); 
-    }
-    .counter { 
-      font-size: 3rem; 
-      font-weight: 700; 
-      color: #000; /* Black for counters */
-    }
-    footer { 
-      background: #000; /* Black footer */
-      color: #fff; /* White text */
-      padding: 30px 0; 
-      text-align: center; 
-    }
-    .form-control { 
-      border-radius: 10px; 
-      border: 1px solid #666; /* Medium gray border */
-      padding: 15px; 
-      background: #fff; /* White input background */
-      color: #333; /* Dark gray text */
-    }
-    .form-control:focus { 
-      border-color: #000; /* Black border on focus */
-      box-shadow: 0 0 0 0.25rem rgba(0,0,0,0.25); 
-    }
-    /* Popup Modal */
-    .modal-content { 
-      border-radius: 15px; 
-      padding: 20px; 
-      background: #fff; /* White modal background */
-      color: #333; /* Dark gray text */
-    }
-    .modal-header { 
-      border: none; 
-    }
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-  </style>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+
+<!-- Back to Top Button -->
+<button id="backToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top">
@@ -148,6 +43,10 @@
         <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         <li class="nav-item">
@@ -160,25 +59,47 @@
   </div>
 </nav>
 
-<!-- Add Bootstrap Icons in <head> if not already included -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>Premium PTFE & Teflon Solutions</h1>
-    <p>Your Trusted Partner for Gaskets, Sheets, Rods, Pipes, Bushes, and Custom Components</p>
-    <a href="#contact" class="btn btn-custom">Get a Free Quote</a>
+<!-- Hero Carousel -->
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active hero" style="background-image: url(static/images/images.jpeg);">
+      <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 data-aos="fade-up">Premium PTFE & Teflon Solutions</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Your Trusted Partner for Gaskets, Sheets, Rods, Pipes, Bushes, and Custom Components</p>
+        <a href="#contact" class="btn btn-custom" data-aos="fade-up" data-aos-delay="400">Get a Free Quote</a>
+      </div>
+    </div>
+    <div class="carousel-item hero" style="background-image: url(static/images/download\ \(1\).jpeg);">
+      <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 data-aos="fade-up">High-Quality PTFE Products</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Durable and Chemical-Resistant Solutions for Industrial Needs</p>
+        <a href="#products" class="btn btn-custom" data-aos="fade-up" data-aos-delay="400">Explore Products</a>
+      </div>
+    </div>
+    <div class="carousel-item hero" style="background-image: url(static/images/turling.webp);">
+      <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 data-aos="fade-up">Custom PTFE Manufacturing</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Tailored Solutions for Your Specific Requirements</p>
+        <a href="#services" class="btn btn-custom" data-aos="fade-up" data-aos-delay="400">Our Services</a>
+      </div>
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </section>
 
 <!-- Products -->
 <section class="py-5" id="products">
   <div class="container text-center">
-    <h2 class="section-title">Our Premium Products</h2>
+    <h2 class="section-title" data-aos="fade-up">Our Premium Products</h2>
     <div class="row g-4">
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card p-4 text-center">
           <i class="fas fa-shield-alt card-icon"></i>
           <h5 class="fw-bold">PTFE Gasket Sheets</h5>
@@ -186,7 +107,7 @@
           <a href="#contact" class="btn btn-custom">Enquire Now</a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card p-4 text-center">
           <i class="fas fa-bolt card-icon"></i>
           <h5 class="fw-bold">PTFE Rods</h5>
@@ -194,11 +115,35 @@
           <a href="#contact" class="btn btn-custom">Enquire Now</a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
         <div class="card p-4 text-center">
           <i class="fas fa-cogs card-icon"></i>
           <h5 class="fw-bold">PTFE Pipes & Bushes</h5>
           <p>Corrosion-resistant piping and bushings for demanding applications.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-4 text-center">
+          <i class="fas fa-tools card-icon"></i>
+          <h5 class="fw-bold">Custom PTFE Components</h5>
+          <p>Tailor-made parts for specialized industrial applications.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card p-4 text-center">
+          <i class="fas fa-layer-group card-icon"></i>
+          <h5 class="fw-bold">PTFE Seals & O-Rings</h5>
+          <p>High-performance seals for extreme temperatures and pressures.</p>
+          <a href="#contact" class="btn btn-custom">Enquire Now</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card p-4 text-center">
+          <i class="fas fa-sitemap card-icon"></i>
+          <h5 class="fw-bold">PTFE Tubes & Hoses</h5>
+          <p>Flexible and durable tubing for fluid transfer systems.</p>
           <a href="#contact" class="btn btn-custom">Enquire Now</a>
         </div>
       </div>
@@ -209,27 +154,48 @@
 <!-- Services -->
 <section class="py-5 bg-light" id="services">
   <div class="container text-center">
-    <h2 class="section-title">Our Expert Services</h2>
+    <h2 class="section-title" data-aos="fade-up">Our Expert Services</h2>
     <div class="row g-4">
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card p-4">
           <i class="fas fa-cut card-icon"></i>
           <h5 class="fw-bold">Custom Cutting</h5>
           <p>Precision cutting of PTFE sheets, rods, and pipes to your exact specifications.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card p-4">
           <i class="fas fa-truck card-icon"></i>
           <h5 class="fw-bold">Bulk Orders</h5>
           <p>Competitive pricing for bulk orders with fast and reliable dispatch.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
         <div class="card p-4">
           <i class="fas fa-check-circle card-icon"></i>
           <h5 class="fw-bold">Quality Assurance</h5>
           <p>All products rigorously tested and certified for industrial standards.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card p-4">
+          <i class="fas fa-tools card-icon"></i>
+          <h5 class="fw-bold">CNC Machining</h5>
+          <p>Advanced CNC machining for complex PTFE components.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card p-4">
+          <i class="fas fa-globe card-icon"></i>
+          <h5 class="fw-bold">Global Shipping</h5>
+          <p>Worldwide delivery with secure packaging and tracking.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card p-4">
+          <i class="fas fa-headset card-icon"></i>
+          <h5 class="fw-bold">Technical Support</h5>
+          <p>Expert consultation and after-sales support for all products.</p>
         </div>
       </div>
     </div>
@@ -239,51 +205,263 @@
 <!-- About -->
 <section class="py-5" id="about">
   <div class="container text-center">
-    <h2 class="section-title">About Us</h2>
-    <p class="mb-5 lead">SK Polymers is a leading supplier of high-quality PTFE & Teflon products for sealing, insulation, and wear-resistant applications. We prioritize precision, quality, and timely delivery across India.</p>
+    <h2 class="section-title" data-aos="fade-up">About Us</h2>
+    <p class="mb-5 lead" data-aos="fade-up" data-aos-delay="200">SK Polymers is a leading supplier of high-quality PTFE & Teflon products for sealing, insulation, and wear-resistant applications. We prioritize precision, quality, and timely delivery across India and beyond.</p>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="100">
         <div class="counter" data-target="10">0</div>
         <p class="fw-bold">Years of Experience</p>
       </div>
-      <div class="col-md-4">
-        <div class="counter" data-target="100">0</div>
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="200">
+        <div class="counter" data-target="500">0</div>
         <p class="fw-bold">Clients Served</p>
       </div>
-      <div class="col-md-4">
-        <div class="counter" data-target="200">0</div>
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="300">
+        <div class="counter" data-target="1000">0</div>
         <p class="fw-bold">Projects Completed</p>
+      </div>
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="400">
+        <div class="counter" data-target="50">0</div>
+        <p class="fw-bold">Team Members</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Industries Served -->
+<section class="py-5 bg-light" id="industries">
+  <div class="container text-center">
+    <h2 class="section-title" data-aos="fade-up">Industries We Serve</h2>
+    <div class="row g-4">
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="100">
+        <i class="fas fa-industry industry-icon"></i>
+        <h5 class="fw-bold mt-3">Chemical Processing</h5>
+        <p>Resistant solutions for harsh chemicals and environments.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="200">
+        <i class="fas fa-oil-can industry-icon"></i>
+        <h5 class="fw-bold mt-3">Oil & Gas</h5>
+        <p>High-pressure seals and components for exploration and refining.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="300">
+        <i class="fas fa-plane industry-icon"></i>
+        <h5 class="fw-bold mt-3">Aerospace</h5>
+        <p>Lightweight, durable parts for aircraft and space applications.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="400">
+        <i class="fas fa-medkit industry-icon"></i>
+        <h5 class="fw-bold mt-3">Pharmaceuticals</h5>
+        <p>Sterile and contamination-free materials for medical equipment.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="100">
+        <i class="fas fa-microchip industry-icon"></i>
+        <h5 class="fw-bold mt-3">Electronics</h5>
+        <p>Insulating components for high-tech devices.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="200">
+        <i class="fas fa-utensils industry-icon"></i>
+        <h5 class="fw-bold mt-3">Food & Beverage</h5>
+        <p>FDA-compliant materials for safe food processing.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="300">
+        <i class="fas fa-car industry-icon"></i>
+        <h5 class="fw-bold mt-3">Automotive</h5>
+        <p>Wear-resistant parts for vehicles and machinery.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="400">
+        <i class="fas fa-tint industry-icon"></i>
+        <h5 class="fw-bold mt-3">Water Treatment</h5>
+        <p>Corrosion-resistant solutions for purification systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-5" id="testimonials">
+  <div class="container text-center">
+    <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-card mx-auto" data-aos="zoom-in">
+            <p>"SK Polymers provided top-notch PTFE products that exceeded our expectations. Highly recommended!"</p>
+            <h6 class="fw-bold">- John Doe, Chemical Industries Inc.</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" data-aos="zoom-in">
+            <p>"Excellent service and quality. Their custom components fit perfectly in our machinery."</p>
+            <h6 class="fw-bold">- Jane Smith, Aerospace Solutions Ltd.</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" data-aos="zoom-in">
+            <p>"Reliable partner for bulk orders. Fast delivery and competitive pricing."</p>
+            <h6 class="fw-bold">- Mike Johnson, Oil & Gas Corp.</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" data-aos="zoom-in">
+            <p>"Outstanding technical support and high-quality materials for our pharmaceutical needs."</p>
+            <h6 class="fw-bold">- Emily Davis, PharmaTech.</h6>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-5 bg-light" id="faq">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="accordion faq-accordion" id="faqAccordion">
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header" id="faqHeading1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+            What is PTFE and why is it used?
+          </button>
+        </h2>
+        <div id="faqCollapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            PTFE (Polytetrafluoroethylene) is a synthetic fluoropolymer known for its high resistance to chemicals, heat, and low friction. It's widely used in gaskets, seals, and insulation.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="accordion-header" id="faqHeading2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+            Do you offer custom sizes for products?
+          </button>
+        </h2>
+        <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we provide custom cutting and machining services to meet your exact specifications.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="accordion-header" id="faqHeading3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+            What are your delivery timelines?
+          </button>
+        </h2>
+        <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Standard orders are dispatched within 3-5 business days. Custom orders may take longer depending on complexity.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="accordion-header" id="faqHeading4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4">
+            Are your products certified?
+          </button>
+        </h2>
+        <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, all our products meet international standards like ISO 9001, FDA compliance, and more. See our certifications section for details.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+        <h2 class="accordion-header" id="faqHeading5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5">
+            How can I get a quote?
+          </button>
+        </h2>
+        <div id="faqCollapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Fill out the contact form or call us at 9152995667 for a free quote.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications
+<section class="py-5" id="certifications">
+  <div class="container text-center">
+    <h2 class="section-title" data-aos="fade-up">Our Certifications</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <img src="static/images/iso9001.png" alt="ISO 9001 Certified" class="certification-img">
+        <p class="mt-2 fw-bold">ISO 9001:2015</p>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <img src="static/images/fda.png" alt="FDA Compliant" class="certification-img">
+        <p class="mt-2 fw-bold">FDA Compliant</p>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <img src="static/images/rohs.png" alt="RoHS Compliant" class="certification-img">
+        <p class="mt-2 fw-bold">RoHS Compliant</p>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+        <img src="static/images/reach.png" alt="REACH Certified" class="certification-img">
+        <p class="mt-2 fw-bold">REACH Certified</p>
+      </div>
+    </div>
+  </div>
+</section> -->
 
 <!-- Gallery -->
 <section class="py-5 bg-light" id="gallery">
   <div class="container text-center">
-    <h2 class="section-title">Product Gallery</h2>
+    <h2 class="section-title" data-aos="fade-up">Product Gallery</h2>
     <div class="row g-4 gallery">
-      <div class="col-md-4"><img src="static/images/download.jpeg" class="img-fluid" alt="PTFE Gasket"></div>
-      <div class="col-md-4"><img src="static/images/download (1).jpeg" class="img-fluid" alt="PTFE Rods"></div>
-      <div class="col-md-4"><img src="static/images/images.jpeg" class="img-fluid" alt="PTFE Pipes"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><img src="static/images/download.jpeg" class="img-fluid" alt="PTFE Gasket"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><img src="static/images/download (1).jpeg" class="img-fluid" alt="PTFE Rods"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><img src="static/images/images.jpeg" class="img-fluid" alt="PTFE Pipes"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400"><img src="static/images/turling.webp" class="img-fluid" alt="Custom PTFE Components"></div>
+      <!-- <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><img src="static/images/turling.webp" class="img-fluid" alt="PTFE Seals"></div> -->
+      <!--<div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><img src="static/images/tubes.jpeg" class="img-fluid" alt="PTFE Tubes"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><img src="static/images/bushes.jpeg" class="img-fluid" alt="PTFE Bushes"></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400"><img src="static/images/applications.jpeg" class="img-fluid" alt="Industrial Applications"></div> -->
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="py-5" id="contact">
+<!-- Newsletter -->
+<section class="py-5" id="newsletter">
   <div class="container text-center">
-    <h2 class="section-title">Get in Touch</h2>
+    <h2 class="section-title" data-aos="fade-up">Subscribe to Our Newsletter</h2>
+    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Stay updated with the latest products, offers, and industry news.</p>
+    <form class="newsletter-form" data-aos="fade-up" data-aos-delay="300">
+      <div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Enter your email" required>
+        <button class="btn btn-custom" type="submit">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="py-5 bg-light" id="contact">
+  <div class="container text-center">
+    <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
         <form>
           <input type="text" class="form-control mb-3" placeholder="Your Name" required>
           <input type="email" class="form-control mb-3" placeholder="Your Email" required>
-          <input type="number" class="form-control mb-3" placeholder="Your Number" required> 
           <input type="tel" class="form-control mb-3" placeholder="Your Phone" required>
           <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
           <button type="submit" class="btn btn-custom w-100">Send Enquiry</button>
         </form>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="300">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.180451569443!2d73.08960227466994!3d19.27451734571148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79626bb42f233%3A0x1932d89fd2125e39!2sBabosa%20Industrial%20Park!5e0!3m2!1sen!2sin!4v1759822318365!5m2!1sen!2sin"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="mt-3"><strong>Our Location:</strong> Babosa Industrial Park, Kalyan bhiwandi Bypass Maharashtra India</p>
       </div>
     </div>
   </div>
@@ -294,13 +472,18 @@
   <div class="container text-center">
     <p class="mb-1">© 2025 SK Polymers | All Rights Reserved</p>
     <p class="mb-1">
-      📞 <a href="tel:+919152995667" style="color:#fff; text-decoration:none;">9152995667</a> | 
-      📧 <a href="sonipandey82385@gmail.com" style="color:#fff; text-decoration:none;">sonipandey82385@gmail.com</a>
+      📞 <a href="tel:+919152995667">9152995667</a> | 
+      📧 <a href="mailto:sonipandey82385@gmail.com">sonipandey82385@gmail.com</a>
     </p>
+    <div class="social-icons mb-2">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
     <p class="mb-0">Designed with ❤️ by SK Polymers</p>
   </div>
 </footer>
-
 
 <!-- Lightbox Modal -->
 <div class="modal fade" id="lightboxModal" tabindex="-1">
@@ -313,8 +496,8 @@
 
 <!-- Enquiry Popup Modal -->
 <div class="modal fade" id="enquiryPopup" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="modal-content" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title fw-bold">Quick Enquiry</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -323,7 +506,7 @@
         <form>
           <input type="text" class="form-control mb-3" placeholder="Your Name" required>
           <input type="email" class="form-control mb-3" placeholder="Your Email" required>
-          <input type="number" class="form-control mb-3" placeholder="Your Number" required>
+          <input type="tel" class="form-control mb-3" placeholder="Your Phone" required>
           <textarea class="form-control mb-3" rows="3" placeholder="Tell us about your requirements"></textarea>
           <button type="submit" class="btn btn-custom w-100">Submit Enquiry</button>
         </form>
@@ -332,8 +515,19 @@
   </div>
 </div>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 <script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
   // Counter Animation
   const counters = document.querySelectorAll('.counter');
   counters.forEach(counter => {
@@ -363,6 +557,26 @@
   setTimeout(() => {
     new bootstrap.Modal(document.getElementById('enquiryPopup')).show();
   }, 5000);
+
+  // Back to Top Button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Newsletter Form Submission (Placeholder)
+  document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for subscribing!');
+  });
 </script>
+
 </body>
 </html>
