@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of PTFE seals, O-rings and lip seal profile">
+  <defs>
+    <linearGradient id="torus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="0.4" stop-color="#E2E9EF"/>
+      <stop offset="1" stop-color="#94A2B0"/>
+    </linearGradient>
+    <linearGradient id="torus2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4F8FB"/><stop offset="1" stop-color="#A8B5C2"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#FDFEFE"/><stop offset="1" stop-color="#BFCAD5"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.5"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="322" cy="382" rx="216" ry="40" fill="url(#shadow)"/>
+
+  <!-- large O-ring -->
+  <g transform="translate(268 238)">
+    <path d="M-140 0 a140,58 0 1 0 280,0 a140,58 0 1 0 -280,0 M-104 0 a104,42 0 1 0 208,0 a104,42 0 1 0 -208,0"
+          fill="url(#torus)" fill-rule="evenodd"/>
+    <path d="M-122 -12 a122,50 0 0 1 244,0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="4"/>
+    <path d="M-140 0 a140,58 0 1 0 280,0" fill="none" stroke="#38D6FF" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+
+  <!-- second O-ring -->
+  <g transform="translate(452 316)">
+    <path d="M-98 0 a98,40 0 1 0 196,0 a98,40 0 1 0 -196,0 M-72 0 a72,29 0 1 0 144,0 a72,29 0 1 0 -144,0"
+          fill="url(#torus2)" fill-rule="evenodd"/>
+    <path d="M-86 -9 a86,35 0 0 1 172,0" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="3"/>
+  </g>
+
+  <!-- lip seal cross-section -->
+  <g transform="translate(452 150)">
+    <path d="M-70 -40 h140 v22 h-96 l-20 26 v32 h-24 z" fill="url(#face)"/>
+    <path d="M-70 -40 h140" fill="none" stroke="#38D6FF" stroke-opacity="0.5" stroke-width="1.5"/>
+    <path d="M-70 40 h24" fill="none" stroke="#8A98A6" stroke-width="1"/>
+  </g>
+
+  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.7">
+    <path d="M128 238 L96 238 M96 218 L96 258"/>
+  </g>
+</svg>

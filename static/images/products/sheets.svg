@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of stacked PTFE sheets and slabs">
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FCFDFE"/><stop offset="1" stop-color="#D9E1E9"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCE3EA"/><stop offset="1" stop-color="#AFBCC8"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B8C4D0"/><stop offset="1" stop-color="#8D9BA9"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.55"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="330" cy="372" rx="230" ry="42" fill="url(#shadow)"/>
+
+  <!-- slab 1 -->
+  <g>
+    <polygon points="140,300 440,300 526,250 226,250" fill="url(#top)"/>
+    <polygon points="140,300 440,300 440,326 140,326" fill="url(#front)"/>
+    <polygon points="440,300 526,250 526,276 440,326" fill="url(#side)"/>
+    <polyline points="140,300 440,300 526,250" fill="none" stroke="#38D6FF" stroke-opacity="0.5" stroke-width="1.5"/>
+  </g>
+  <!-- slab 2 -->
+  <g>
+    <polygon points="154,258 454,258 540,208 240,208" fill="url(#top)"/>
+    <polygon points="154,258 454,258 454,284 154,284" fill="url(#front)"/>
+    <polygon points="454,258 540,208 540,234 454,284" fill="url(#side)"/>
+    <polyline points="154,258 454,258 540,208" fill="none" stroke="#38D6FF" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+  <!-- slab 3 -->
+  <g>
+    <polygon points="168,216 468,216 554,166 254,166" fill="url(#top)"/>
+    <polygon points="168,216 468,216 468,238 168,238" fill="url(#front)"/>
+    <polygon points="468,216 554,166 554,188 468,238" fill="url(#side)"/>
+    <polyline points="168,216 468,216 554,166" fill="none" stroke="#38D6FF" stroke-opacity="0.35" stroke-width="1.5"/>
+  </g>
+
+  <!-- dimension callout -->
+  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.8">
+    <path d="M112 326 L112 166"/>
+    <path d="M105 326 L119 326 M105 166 L119 166"/>
+    <path d="M140 326 L118 326 M168 216 L118 216"/>
+  </g>
+  <g stroke="#38D6FF" stroke-width="1" opacity="0.35">
+    <path d="M580 250 L610 250 M595 250 L595 300"/>
+  </g>
+</svg>

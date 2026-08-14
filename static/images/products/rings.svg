@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of PTFE rings and flange gaskets with bolt holes">
+  <defs>
+    <linearGradient id="face" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#FDFEFE"/><stop offset="0.55" stop-color="#E5EBF1"/><stop offset="1" stop-color="#C2CDD8"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B6C2CE"/><stop offset="1" stop-color="#8795A3"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.5"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="330" cy="374" rx="220" ry="42" fill="url(#shadow)"/>
+
+  <!-- back ring (small) -->
+  <g transform="translate(452 196)">
+    <path d="M-84 0 a84,36 0 1 0 168,0 a84,36 0 1 0 -168,0 M-46 0 a46,20 0 1 0 92,0 a46,20 0 1 0 -92,0" fill="url(#band)" fill-rule="evenodd" transform="translate(0 16)"/>
+    <path d="M-84 0 a84,36 0 1 0 168,0 a84,36 0 1 0 -168,0 M-46 0 a46,20 0 1 0 92,0 a46,20 0 1 0 -92,0" fill="url(#face)" fill-rule="evenodd"/>
+    <path d="M-84 0 a84,36 0 1 0 168,0" fill="none" stroke="#9AA7B4" stroke-width="1"/>
+  </g>
+
+  <!-- flange gasket with bolt holes -->
+  <g transform="translate(268 250)">
+    <path d="M-150 0 a150,64 0 1 0 300,0 a150,64 0 1 0 -300,0 M-92 0 a92,39 0 1 0 184,0 a92,39 0 1 0 -184,0" fill="url(#band)" fill-rule="evenodd" transform="translate(0 22)"/>
+    <path d="M-150 0 a150,64 0 1 0 300,0 a150,64 0 1 0 -300,0 M-92 0 a92,39 0 1 0 184,0 a92,39 0 1 0 -184,0" fill="url(#face)" fill-rule="evenodd"/>
+    <g fill="#48586A">
+      <ellipse cx="-121" cy="-2" rx="10" ry="5"/>
+      <ellipse cx="121" cy="-2" rx="10" ry="5"/>
+      <ellipse cx="-72" cy="-38" rx="10" ry="5"/>
+      <ellipse cx="72" cy="-38" rx="10" ry="5"/>
+      <ellipse cx="-72" cy="42" rx="10" ry="5"/>
+      <ellipse cx="72" cy="42" rx="10" ry="5"/>
+    </g>
+    <path d="M-150 0 a150,64 0 1 0 300,0" fill="none" stroke="#38D6FF" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+
+  <!-- front thin ring -->
+  <g transform="translate(430 322)">
+    <path d="M-104 0 a104,44 0 1 0 208,0 a104,44 0 1 0 -208,0 M-70 0 a70,30 0 1 0 140,0 a70,30 0 1 0 -140,0" fill="url(#band)" fill-rule="evenodd" transform="translate(0 12)"/>
+    <path d="M-104 0 a104,44 0 1 0 208,0 a104,44 0 1 0 -208,0 M-70 0 a70,30 0 1 0 140,0 a70,30 0 1 0 -140,0" fill="url(#face)" fill-rule="evenodd"/>
+  </g>
+
+  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.7">
+    <path d="M118 250 L88 250 M88 232 L88 268"/>
+    <path d="M268 250 L118 250" stroke-dasharray="4 5"/>
+  </g>
+</svg>

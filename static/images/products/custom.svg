@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of a custom machined PTFE component with bores and steps">
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FCFDFE"/><stop offset="1" stop-color="#D7DFE7"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DBE2E9"/><stop offset="1" stop-color="#A9B6C2"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B4C0CC"/><stop offset="1" stop-color="#8795A3"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.5"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="322" cy="386" rx="212" ry="40" fill="url(#shadow)"/>
+
+  <!-- base block -->
+  <g>
+    <polygon points="146,300 434,300 520,250 232,250" fill="url(#top)"/>
+    <polygon points="146,300 434,300 434,346 146,346" fill="url(#front)"/>
+    <polygon points="434,300 520,250 520,296 434,346" fill="url(#side)"/>
+  </g>
+  <!-- raised step -->
+  <g>
+    <polygon points="200,246 380,246 466,196 286,196" fill="url(#top)"/>
+    <polygon points="200,246 380,246 380,300 200,300" fill="url(#front)"/>
+    <polygon points="380,246 466,196 466,250 380,300" fill="url(#side)"/>
+    <polyline points="200,246 380,246 466,196" fill="none" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+  </g>
+
+  <!-- bores on top face of step -->
+  <g fill="#3F4D5C">
+    <ellipse cx="266" cy="224" rx="22" ry="11"/>
+    <ellipse cx="372" cy="222" rx="16" ry="8"/>
+  </g>
+  <g fill="none" stroke="#8FA0B0" stroke-width="1">
+    <ellipse cx="266" cy="224" rx="22" ry="11"/>
+    <ellipse cx="372" cy="222" rx="16" ry="8"/>
+  </g>
+
+  <!-- counterbore on base top face -->
+  <g>
+    <ellipse cx="470" cy="272" rx="18" ry="9" fill="#3F4D5C"/>
+    <ellipse cx="470" cy="272" rx="18" ry="9" fill="none" stroke="#8FA0B0" stroke-width="1"/>
+  </g>
+
+  <!-- chamfer accent + callouts -->
+  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.75">
+    <path d="M146 366 L434 366 M146 359 L146 373 M434 359 L434 373"/>
+    <path d="M120 300 L120 346 M113 300 L127 300 M113 346 L127 346"/>
+  </g>
+  <g stroke="#38D6FF" stroke-width="1" opacity="0.35" fill="none">
+    <path d="M266 224 L266 150 L330 150"/>
+  </g>
+</svg>

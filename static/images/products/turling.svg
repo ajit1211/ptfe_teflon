@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of PTFE turling granules and skived chips">
+  <defs>
+    <linearGradient id="chip" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#CBD5DF"/>
+    </linearGradient>
+    <linearGradient id="chip2" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#EDF2F6"/><stop offset="1" stop-color="#A9B6C3"/>
+    </linearGradient>
+    <linearGradient id="heap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EDF3"/><stop offset="1" stop-color="#9DAAB8"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.5"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="322" cy="366" rx="222" ry="44" fill="url(#shadow)"/>
+
+  <!-- heap silhouette -->
+  <path d="M120 348 C150 268 205 214 268 200 C318 188 352 200 388 214 C440 234 494 274 522 348 Z" fill="url(#heap)"/>
+
+  <!-- curled shavings -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M176 330 C186 296 214 282 236 298 C256 312 240 336 220 330" stroke="url(#chip)" stroke-width="9"/>
+    <path d="M244 342 C258 300 296 288 318 306 C338 322 318 344 296 338" stroke="url(#chip2)" stroke-width="8"/>
+    <path d="M324 330 C336 292 374 280 396 300 C414 316 396 340 374 332" stroke="url(#chip)" stroke-width="9"/>
+    <path d="M398 342 C412 310 446 302 464 320 C478 334 462 350 444 344" stroke="url(#chip2)" stroke-width="7"/>
+    <path d="M204 268 C216 236 250 226 268 244 C282 258 266 276 248 270" stroke="url(#chip)" stroke-width="7"/>
+    <path d="M296 250 C310 220 344 214 360 232 C372 246 356 262 340 256" stroke="url(#chip2)" stroke-width="7"/>
+    <path d="M366 268 C380 240 412 236 426 254 C436 268 422 282 406 276" stroke="url(#chip)" stroke-width="6"/>
+    <path d="M264 220 C276 198 304 194 316 208" stroke="url(#chip)" stroke-width="5"/>
+  </g>
+
+  <!-- loose granules -->
+  <g fill="url(#chip)">
+    <ellipse cx="120" cy="352" rx="14" ry="6" transform="rotate(-16 120 352)"/>
+    <ellipse cx="88" cy="336" rx="10" ry="5" transform="rotate(22 88 336)"/>
+    <ellipse cx="546" cy="346" rx="13" ry="6" transform="rotate(12 546 346)"/>
+    <ellipse cx="578" cy="330" rx="9" ry="4" transform="rotate(-24 578 330)"/>
+    <ellipse cx="160" cy="366" rx="11" ry="5" transform="rotate(8 160 366)"/>
+    <ellipse cx="498" cy="364" rx="12" ry="5" transform="rotate(-9 498 364)"/>
+  </g>
+
+  <path d="M120 348 H522" stroke="#38D6FF" stroke-opacity="0.3" stroke-width="1.5"/>
+</svg>

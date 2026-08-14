@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Technical render of PTFE rods and bars in three diameters">
+  <defs>
+    <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93A1AE"/>
+      <stop offset="0.18" stop-color="#F7FAFC"/>
+      <stop offset="0.45" stop-color="#E3E9EF"/>
+      <stop offset="0.78" stop-color="#B4C0CB"/>
+      <stop offset="1" stop-color="#8B99A7"/>
+    </linearGradient>
+    <radialGradient id="cap" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C4CFD9"/>
+    </radialGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000814" stop-opacity="0.5"/><stop offset="1" stop-color="#000814" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="330" cy="392" rx="215" ry="38" fill="url(#shadow)"/>
+
+  <g transform="rotate(-7 320 240)">
+    <!-- large rod -->
+    <g>
+      <ellipse cx="150" cy="180" rx="17" ry="52" fill="#7C8A98"/>
+      <rect x="150" y="128" width="330" height="104" fill="url(#cyl)"/>
+      <ellipse cx="480" cy="180" rx="17" ry="52" fill="url(#cap)"/>
+      <ellipse cx="480" cy="180" rx="17" ry="52" fill="none" stroke="#94A2B0" stroke-width="1"/>
+      <path d="M150 128 H480" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    </g>
+    <!-- medium rod -->
+    <g>
+      <ellipse cx="196" cy="272" rx="13" ry="38" fill="#7C8A98"/>
+      <rect x="196" y="234" width="300" height="76" fill="url(#cyl)"/>
+      <ellipse cx="496" cy="272" rx="13" ry="38" fill="url(#cap)"/>
+      <ellipse cx="496" cy="272" rx="13" ry="38" fill="none" stroke="#94A2B0" stroke-width="1"/>
+      <path d="M196 234 H496" stroke="#38D6FF" stroke-opacity="0.35" stroke-width="1.5"/>
+    </g>
+    <!-- small rod -->
+    <g>
+      <ellipse cx="238" cy="338" rx="9" ry="25" fill="#7C8A98"/>
+      <rect x="238" y="313" width="262" height="50" fill="url(#cyl)"/>
+      <ellipse cx="500" cy="338" rx="9" ry="25" fill="url(#cap)"/>
+      <ellipse cx="500" cy="338" rx="9" ry="25" fill="none" stroke="#94A2B0" stroke-width="1"/>
+    </g>
+  </g>
+
+  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.75">
+    <path d="M545 118 L575 118 M545 232 L575 232 M560 118 L560 232"/>
+    <path d="M553 125 L560 118 L567 125 M553 225 L560 232 L567 225"/>
+  </g>
+</svg>
