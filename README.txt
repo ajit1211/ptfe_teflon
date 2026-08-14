@@ -14,6 +14,13 @@ FILES
 HOW TO USE
   Open index.html in a browser, or serve the folder. Everything is static — no build step.
 
+COLOURS
+  The whole palette lives in the :root block at the top of static/css/style.css — charcoal
+  backgrounds (--ink-*), card surfaces (--surface, --surface-2) and the gold accent
+  (--accent #E8C84A, --accent-bright #F0D878). Changing --accent restyles every CTA, hover
+  state, icon and highlight on the site. The technical accent lines inside
+  static/images/**/*.svg use the same #E8C84A literal.
+
 THINGS THE OWNER SHOULD REPLACE
   1. Statistics (index.html, "STATS" section) — 10+ years, 500+ clients, 1000+ projects,
      20+ states were carried over from the previous site. Replace with audited figures.

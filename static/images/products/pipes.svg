@@ -27,7 +27,7 @@
       <ellipse cx="476" cy="176" rx="18" ry="56" fill="url(#cap)"/>
       <ellipse cx="476" cy="176" rx="10" ry="33" fill="url(#bore)"/>
       <ellipse cx="476" cy="176" rx="18" ry="56" fill="none" stroke="#94A2B0" stroke-width="1"/>
-      <path d="M160 120 H476" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+      <path d="M160 120 H476" stroke="#E8C84A" stroke-opacity="0.45" stroke-width="1.5"/>
     </g>
     <g>
       <ellipse cx="204" cy="274" rx="14" ry="40" fill="#77848F"/>
@@ -35,7 +35,7 @@
       <ellipse cx="492" cy="274" rx="14" ry="40" fill="url(#cap)"/>
       <ellipse cx="492" cy="274" rx="8" ry="23" fill="url(#bore)"/>
       <ellipse cx="492" cy="274" rx="14" ry="40" fill="none" stroke="#94A2B0" stroke-width="1"/>
-      <path d="M204 234 H492" stroke="#38D6FF" stroke-opacity="0.32" stroke-width="1.5"/>
+      <path d="M204 234 H492" stroke="#E8C84A" stroke-opacity="0.32" stroke-width="1.5"/>
     </g>
     <g>
       <ellipse cx="246" cy="342" rx="9" ry="26" fill="#77848F"/>
@@ -46,7 +46,7 @@
     </g>
   </g>
 
-  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.75">
+  <g stroke="#6E6A5C" stroke-width="1" fill="none" opacity="0.75">
     <path d="M540 110 L578 110 M540 236 L578 236 M559 110 L559 236"/>
     <path d="M552 117 L559 110 L566 117 M552 229 L559 236 L566 229"/>
   </g>

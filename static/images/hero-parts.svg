@@ -26,9 +26,9 @@
       <stop offset="0" stop-color="#C9D3DD"/><stop offset="1" stop-color="#9BA9B7"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.45" r="0.55">
-      <stop offset="0" stop-color="#38D6FF" stop-opacity="0.20"/>
-      <stop offset="0.6" stop-color="#0EA5E9" stop-opacity="0.06"/>
-      <stop offset="1" stop-color="#0EA5E9" stop-opacity="0"/>
+      <stop offset="0" stop-color="#E8C84A" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#C9A22E" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#C9A22E" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="#00060F" stop-opacity="0.6"/><stop offset="1" stop-color="#00060F" stop-opacity="0"/>
@@ -38,7 +38,7 @@
   <ellipse cx="380" cy="330" rx="360" ry="300" fill="url(#glow)"/>
 
   <!-- technical arcs -->
-  <g fill="none" stroke="#38D6FF" stroke-opacity="0.16" stroke-width="1">
+  <g fill="none" stroke="#E8C84A" stroke-opacity="0.16" stroke-width="1">
     <circle cx="380" cy="320" r="268"/>
     <circle cx="380" cy="320" r="196" stroke-dasharray="2 10"/>
   </g>
@@ -50,7 +50,7 @@
     <polygon points="96,470 300,470 366,432 162,432" fill="url(#slabTop)"/>
     <polygon points="96,470 300,470 300,498 96,498" fill="url(#slabFront)"/>
     <polygon points="300,470 366,432 366,460 300,498" fill="#8593A1"/>
-    <polyline points="96,470 300,470 366,432" fill="none" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <polyline points="96,470 300,470 366,432" fill="none" stroke="#E8C84A" stroke-opacity="0.45" stroke-width="1.5"/>
   </g>
 
   <!-- tube, back right -->
@@ -60,7 +60,7 @@
     <ellipse cx="656" cy="404" rx="15" ry="46" fill="url(#cap)"/>
     <ellipse cx="656" cy="404" rx="8" ry="27" fill="url(#bore)"/>
     <ellipse cx="656" cy="404" rx="15" ry="46" fill="none" stroke="#94A2B0" stroke-width="1"/>
-    <path d="M404 358 H656" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <path d="M404 358 H656" stroke="#E8C84A" stroke-opacity="0.45" stroke-width="1.5"/>
   </g>
 
   <!-- large gasket ring, hero element -->
@@ -77,7 +77,7 @@
       <ellipse cx="-100" cy="56" rx="12" ry="6"/>
       <ellipse cx="100" cy="56" rx="12" ry="6"/>
     </g>
-    <path d="M-206 0 a206,86 0 1 0 412,0" fill="none" stroke="#38D6FF" stroke-opacity="0.5" stroke-width="1.5"/>
+    <path d="M-206 0 a206,86 0 1 0 412,0" fill="none" stroke="#E8C84A" stroke-opacity="0.5" stroke-width="1.5"/>
   </g>
 
   <!-- rod, front -->
@@ -86,14 +86,14 @@
     <rect x="150" y="482" width="330" height="84" fill="url(#cyl)"/>
     <ellipse cx="480" cy="524" rx="14" ry="42" fill="url(#cap)"/>
     <ellipse cx="480" cy="524" rx="14" ry="42" fill="none" stroke="#94A2B0" stroke-width="1"/>
-    <path d="M150 482 H480" stroke="#38D6FF" stroke-opacity="0.4" stroke-width="1.5"/>
+    <path d="M150 482 H480" stroke="#E8C84A" stroke-opacity="0.4" stroke-width="1.5"/>
   </g>
 
   <!-- callouts -->
-  <g stroke="#7FA6C4" stroke-opacity="0.65" stroke-width="1" fill="none">
+  <g stroke="#8A8272" stroke-opacity="0.65" stroke-width="1" fill="none">
     <path d="M558 300 L640 300 M640 300 L672 268"/>
-    <circle cx="558" cy="300" r="3.5" fill="#38D6FF" stroke="none"/>
+    <circle cx="558" cy="300" r="3.5" fill="#E8C84A" stroke="none"/>
     <path d="M120 214 L196 214 M196 214 L232 250"/>
-    <circle cx="120" cy="214" r="3.5" fill="#38D6FF" stroke="none"/>
+    <circle cx="120" cy="214" r="3.5" fill="#E8C84A" stroke="none"/>
   </g>
 </svg>

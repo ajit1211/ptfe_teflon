@@ -29,7 +29,7 @@
     <!-- bore -->
     <path d="M-44 0 a44,18 0 1 0 88,0 v96 a44,18 0 0 1 -88,0 z" fill="url(#bore)"/>
     <path d="M-44 0 a44,18 0 1 0 88,0 a44,18 0 1 0 -88,0" fill="#2E3C4B"/>
-    <path d="M-72 0 a72,30 0 0 1 144,0" fill="none" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <path d="M-72 0 a72,30 0 0 1 144,0" fill="none" stroke="#E8C84A" stroke-opacity="0.45" stroke-width="1.5"/>
   </g>
 
   <!-- plain sleeve bush, secondary -->
@@ -39,8 +39,8 @@
     <path d="M-46 0 a46,19 0 1 0 92,0 a46,19 0 1 0 -92,0" fill="#2E3C4B"/>
   </g>
 
-  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.7">
+  <g stroke="#6E6A5C" stroke-width="1" fill="none" opacity="0.7">
     <path d="M196 200 L150 200 M150 182 L150 218"/>
-    <path d="M256 200 L344 200" stroke="#38D6FF" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+    <path d="M256 200 L344 200" stroke="#E8C84A" stroke-opacity="0.35" stroke-dasharray="4 5"/>
   </g>
 </svg>

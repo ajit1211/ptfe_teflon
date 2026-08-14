@@ -27,7 +27,7 @@
     <polygon points="200,246 380,246 466,196 286,196" fill="url(#top)"/>
     <polygon points="200,246 380,246 380,300 200,300" fill="url(#front)"/>
     <polygon points="380,246 466,196 466,250 380,300" fill="url(#side)"/>
-    <polyline points="200,246 380,246 466,196" fill="none" stroke="#38D6FF" stroke-opacity="0.45" stroke-width="1.5"/>
+    <polyline points="200,246 380,246 466,196" fill="none" stroke="#E8C84A" stroke-opacity="0.45" stroke-width="1.5"/>
   </g>
 
   <!-- bores on top face of step -->
@@ -47,11 +47,11 @@
   </g>
 
   <!-- chamfer accent + callouts -->
-  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.75">
+  <g stroke="#6E6A5C" stroke-width="1" fill="none" opacity="0.75">
     <path d="M146 366 L434 366 M146 359 L146 373 M434 359 L434 373"/>
     <path d="M120 300 L120 346 M113 300 L127 300 M113 346 L127 346"/>
   </g>
-  <g stroke="#38D6FF" stroke-width="1" opacity="0.35" fill="none">
+  <g stroke="#E8C84A" stroke-width="1" opacity="0.35" fill="none">
     <path d="M266 224 L266 150 L330 150"/>
   </g>
 </svg>

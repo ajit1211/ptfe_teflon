@@ -41,5 +41,5 @@
     <ellipse cx="498" cy="364" rx="12" ry="5" transform="rotate(-9 498 364)"/>
   </g>
 
-  <path d="M120 348 H522" stroke="#38D6FF" stroke-opacity="0.3" stroke-width="1.5"/>
+  <path d="M120 348 H522" stroke="#E8C84A" stroke-opacity="0.3" stroke-width="1.5"/>
 </svg>

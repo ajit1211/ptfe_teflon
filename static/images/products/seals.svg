@@ -22,7 +22,7 @@
     <path d="M-140 0 a140,58 0 1 0 280,0 a140,58 0 1 0 -280,0 M-104 0 a104,42 0 1 0 208,0 a104,42 0 1 0 -208,0"
           fill="url(#torus)" fill-rule="evenodd"/>
     <path d="M-122 -12 a122,50 0 0 1 244,0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="4"/>
-    <path d="M-140 0 a140,58 0 1 0 280,0" fill="none" stroke="#38D6FF" stroke-opacity="0.4" stroke-width="1.5"/>
+    <path d="M-140 0 a140,58 0 1 0 280,0" fill="none" stroke="#E8C84A" stroke-opacity="0.4" stroke-width="1.5"/>
   </g>
 
   <!-- second O-ring -->
@@ -35,11 +35,11 @@
   <!-- lip seal cross-section -->
   <g transform="translate(452 150)">
     <path d="M-70 -40 h140 v22 h-96 l-20 26 v32 h-24 z" fill="url(#face)"/>
-    <path d="M-70 -40 h140" fill="none" stroke="#38D6FF" stroke-opacity="0.5" stroke-width="1.5"/>
+    <path d="M-70 -40 h140" fill="none" stroke="#E8C84A" stroke-opacity="0.5" stroke-width="1.5"/>
     <path d="M-70 40 h24" fill="none" stroke="#8A98A6" stroke-width="1"/>
   </g>
 
-  <g stroke="#5C7185" stroke-width="1" fill="none" opacity="0.7">
+  <g stroke="#6E6A5C" stroke-width="1" fill="none" opacity="0.7">
     <path d="M128 238 L96 238 M96 218 L96 258"/>
   </g>
 </svg>
