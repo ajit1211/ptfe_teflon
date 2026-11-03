@@ -1,0 +1,5 @@
+# SK Polymers
+User-agent: *
+Allow: /
+
+Sitemap: https://skpolymers.vercel.app/sitemap.xml

@@ -1,0 +1,8 @@
+# Source and tooling — the generated HTML in the repo root is what gets deployed.
+src/
+scripts/
+build.mjs
+.generated-files
+README.txt
+SEO-REPORT.md
+DEPLOYMENT.md

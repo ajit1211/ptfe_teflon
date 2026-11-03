@@ -11,8 +11,27 @@
   var FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
   /* ── page load choreography ─────────────────────────── */
-  window.addEventListener('load', function () { document.body.classList.add('loaded'); });
-  setTimeout(function () { document.body.classList.add('loaded'); }, 900);
+  // Start the hero entrance on the first frame after parsing (the script is deferred), rather than
+  // waiting for window.load — waiting for every image and font delayed the hero by seconds on mobile.
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () { document.body.classList.add('loaded'); });
+  });
+
+  /* ── analytics events ───────────────────────────────── */
+  // Sends GA4 events only when gtag is present (it is injected by build.mjs when a
+  // Measurement ID is configured); otherwise this is a no-op.
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!link) return;
+    var href = link.getAttribute('href');
+    var where = { link_location: link.closest('header,footer,.whatsapp-float,.mobile-nav') ? link.closest('header,footer,.whatsapp-float,.mobile-nav').className.split(' ')[0] : 'content', page_path: location.pathname };
+    if (href.indexOf('tel:') === 0) track('phone_click', where);
+    else if (href.indexOf('https://wa.me/') === 0) track('whatsapp_click', where);
+    else if (href.indexOf('mailto:') === 0) track('email_click', where);
+  });
 
   var yearEl = $('#year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -90,6 +109,11 @@
     var link = $('#primaryNav a.is-active');
     if (link) moveIndicator(link);
   });
+  // Multi-page navigation: the build marks the current section's link; show the indicator under it.
+  if (!sections.length) {
+    var current = $('#primaryNav a.is-active');
+    if (current) window.requestAnimationFrame(function () { moveIndicator(current); });
+  }
 
   /* ── mobile navigation ──────────────────────────────── */
   var navToggle   = $('#navToggle');
@@ -229,85 +253,7 @@
     heroVisual.style.transition = 'transform .6s cubic-bezier(.22,.75,.28,1)';
   }
 
-  /* ── product detail modal ───────────────────────────── */
-  var PRODUCTS = {
-    sheets: {
-      title: 'PTFE Sheets & Slabs', tag: 'Sheet / Slab', img: 'static/images/products/sheets.svg',
-      desc: 'Moulded and skived PTFE sheets in virgin and filled grades, supplied as standard stock sizes or cut to your dimensions for sealing, lining and gasket fabrication.',
-      applications: ['Flange gaskets', 'Tank & chute lining', 'Slide and wear pads', 'Electrical insulation', 'Anti-stick surfaces'],
-      grades: ['Virgin PTFE', 'Glass-filled', 'Carbon-filled', 'Bronze-filled', 'Graphite-filled'],
-      custom: ['Cut to size', 'Thickness 0.5–100 mm', 'Skiving to spec', 'Etched one/both sides']
-    },
-    rods: {
-      title: 'PTFE Rods & Bars', tag: 'Machining Stock', img: 'static/images/products/rods.svg',
-      desc: 'Extruded and moulded PTFE rod stock with consistent density throughout the section — the base material for turned bushes, spacers, valve seats and precision machined parts.',
-      applications: ['Turned components', 'Valve seats & stems', 'Spacers and insulators', 'Bearing blanks', 'Pump internals'],
-      grades: ['Virgin PTFE', 'Glass-filled 15/25%', 'Carbon-filled', 'Bronze-filled'],
-      custom: ['Diameter 4–300 mm', 'Cut lengths', 'Centreless ground', 'Machined to drawing']
-    },
-    pipes: {
-      title: 'PTFE Pipes & Tubes', tag: 'Fluid Handling', img: 'static/images/products/pipes.svg',
-      desc: 'Chemically inert PTFE tubing and pipe for aggressive media transfer, with excellent thermal stability and a non-wetting bore that resists fouling.',
-      applications: ['Corrosive fluid transfer', 'Heat exchanger tubing', 'Instrument lines', 'Cable sleeving', 'Steam and vent lines'],
-      grades: ['Virgin PTFE', 'Glass-filled', 'Conductive (carbon)'],
-      custom: ['Custom ID / OD', 'Wall thickness to spec', 'Cut lengths', 'Flared or belled ends']
-    },
-    rings: {
-      title: 'PTFE Rings & Gaskets', tag: 'Sealing', img: 'static/images/products/rings.svg',
-      desc: 'Precision-cut PTFE rings, envelope gaskets and flange gaskets produced to standard pipe tables or to your bolt pattern and dimensions.',
-      applications: ['Flange sealing', 'Pump and valve bodies', 'Heat exchanger covers', 'Manhole and vessel covers'],
-      grades: ['Virgin PTFE', 'Expanded PTFE', 'Glass-filled', 'Filled composites'],
-      custom: ['Custom OD / ID', 'Bolt-hole patterns', 'Thickness to spec', 'Full face or inside bolt circle']
-    },
-    turling: {
-      title: 'PTFE Turling / Granules', tag: 'Raw Material', img: 'static/images/products/turling.svg',
-      desc: 'Clean PTFE turning scrap and granules recovered from machining, supplied in bulk for reprocessing, resin blending and powder sintering.',
-      applications: ['Recycling & reprocessing', 'Resin blending', 'Powder sintering', 'Filler compounding'],
-      grades: ['Virgin turning scrap', 'Mixed filled turning', 'Granulated PTFE'],
-      custom: ['Bulk packing', 'Sorted by grade', 'Granule size on request']
-    },
-    bushes: {
-      title: 'PTFE Bushes & Bearings', tag: 'Bearings', img: 'static/images/products/bushes.svg',
-      desc: 'Self-lubricating PTFE bushes, sleeves and flanged bearings that run dry with a very low coefficient of friction — no grease, no maintenance schedule.',
-      applications: ['Dry-running bearings', 'Bridge and structural bearings', 'Pump wear rings', 'Guide bushes', 'Linear slides'],
-      grades: ['Virgin PTFE', 'Bronze-filled', 'Carbon-filled', 'Glass-filled'],
-      custom: ['Plain, flanged or split', 'Machined to drawing', 'Interference fit sizing']
-    },
-    seals: {
-      title: 'PTFE Seals & O-Rings', tag: 'Sealing', img: 'static/images/products/seals.svg',
-      desc: 'PTFE O-rings, lip seals, back-up rings and V-packing for service conditions where elastomers degrade — extreme temperature, pressure or chemical attack.',
-      applications: ['Rotary and reciprocating shafts', 'Chemical pumps', 'Cryogenic service', 'High-temperature valves', 'Hydraulic back-up rings'],
-      grades: ['Virgin PTFE', 'Glass-filled', 'Carbon/graphite-filled', 'Bronze-filled'],
-      custom: ['Machined to any size', 'Spring-energised on request', 'Profile to drawing']
-    },
-    custom: {
-      title: 'Custom PTFE Components', tag: 'Custom', img: 'static/images/products/custom.svg',
-      desc: 'Complete parts machined from PTFE stock to your drawing — send dimensions, a CAD file or a sample and our team will advise on grade, tolerance and finish.',
-      applications: ['Semiconductor & lab fixtures', 'Food and pharma contact parts', 'Aerospace insulators', 'Instrument housings', 'Prototype components'],
-      grades: ['Virgin PTFE', 'All filled grades', 'PTFE composites'],
-      custom: ['CNC turning & milling', 'Tight tolerance work', 'Prototype to production volumes', 'Material certificates supplied']
-    }
-  };
-
-  var pModal = $('#productModal');
-  var pImg   = $('#pmImage');
-  var pTag   = $('#pmTag');
-  var pTitle = $('#pmTitle');
-  var pDesc  = $('#pmDesc');
-  var pQuote = $('#pmQuote');
-  var activeProduct = null;
-  var modalReturnFocus = null;
-
-  function fillList(el, items) {
-    if (!el) return;
-    el.textContent = '';
-    items.forEach(function (item) {
-      var li = document.createElement('li');
-      li.textContent = item;
-      el.appendChild(li);
-    });
-  }
-
+  /* ── dialogs (shared by the lightbox) ───────────────── */
   function openDialog(el) {
     el.hidden = false;
     document.body.classList.add('no-scroll');
@@ -335,74 +281,49 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
-  function openProduct(key) {
-    var data = PRODUCTS[key];
-    if (!data || !pModal) return;
-    activeProduct = data.title;
-    modalReturnFocus = document.activeElement;
-    pImg.src = data.img;
-    pImg.alt = data.title;
-    pTag.textContent = data.tag;
-    pTitle.textContent = data.title;
-    pDesc.textContent = data.desc;
-    fillList($('#pmApplications'), data.applications);
-    fillList($('#pmGrades'), data.grades);
-    fillList($('#pmCustom'), data.custom);
-    openDialog(pModal);
-  }
-
-  function closeProduct() {
-    closeDialog(pModal, function () {
-      if (modalReturnFocus && document.contains(modalReturnFocus)) modalReturnFocus.focus();
-    });
-  }
-
-  $$('[data-product-open]').forEach(function (btn) {
-    btn.addEventListener('click', function () { openProduct(btn.getAttribute('data-product-open')); });
-  });
-  if (pModal) {
-    $$('[data-close-modal]', pModal).forEach(function (el) { el.addEventListener('click', closeProduct); });
-    pModal.addEventListener('keydown', function (e) { trapFocus(e, pModal); });
-  }
-  if (pQuote) {
-    pQuote.addEventListener('click', function () {
-      var product = activeProduct;
-      closeProduct();
-      window.setTimeout(function () { prefillEnquiry(product); }, 260);
-    });
-  }
-
   /* ── enquiry prefill ────────────────────────────────── */
+  // Product detail now lives on real pages; "Enquire Now" buttons carry the product slug, which
+  // matches an <option value> in the enquiry form.
   var productSelect = $('#f-product');
 
-  function prefillEnquiry(productName) {
-    var contact = $('#contact');
-    if (contact) contact.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+  function selectProduct(slug) {
+    if (!productSelect || !slug) return;
+    var match = $$('option', productSelect).some(function (opt) { return opt.value === slug; });
+    productSelect.value = match ? slug : '';
+  }
 
-    if (productName && productSelect) {
-      var matched = false;
-      $$('option', productSelect).forEach(function (opt) {
-        if (opt.textContent.trim() === productName.trim()) { productSelect.value = opt.value || opt.textContent; matched = true; }
-      });
-      if (!matched) productSelect.selectedIndex = 0;
-    }
+  function focusName(delay) {
     window.setTimeout(function () {
       var target = $('#f-name');
       if (target) target.focus({ preventScroll: true });
-    }, reduceMotion.matches ? 0 : 700);
+    }, reduceMotion.matches ? 0 : delay);
+  }
+
+  function prefillEnquiry(slug) {
+    var section = $('#enquiry');
+    if (section) section.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+    selectProduct(slug);
+    focusName(700);
   }
 
   $$('[data-enquire]').forEach(function (btn) {
-    btn.addEventListener('click', function () { prefillEnquiry(btn.getAttribute('data-enquire')); });
+    btn.addEventListener('click', function (e) {
+      if (!$('#enquiry')) return;          // no form on this page: let the link navigate
+      e.preventDefault();
+      prefillEnquiry(btn.getAttribute('data-enquire'));
+    });
   });
   $$('[data-quote-trigger]').forEach(function (el) {
     el.addEventListener('click', function () {
-      window.setTimeout(function () {
-        var target = $('#f-name');
-        if (target) target.focus({ preventScroll: true });
-      }, reduceMotion.matches ? 0 : 800);
+      if ((el.getAttribute('href') || '').charAt(0) === '#') focusName(800);
     });
   });
+
+  // Links such as contact/?product=ptfe-sheets#enquiry preselect the product.
+  try {
+    var preset = new URLSearchParams(window.location.search).get('product');
+    if (preset) selectProduct(preset);
+  } catch (err) { /* URLSearchParams unsupported: ignore */ }
 
   /* ── gallery lightbox ───────────────────────────────── */
   var lightbox   = $('#lightbox');
@@ -464,128 +385,12 @@
     }, { passive: true });
   }
 
-  /* ── legal modal ────────────────────────────────────── */
-  var LEGAL = {
-    privacy: {
-      title: 'Privacy Policy',
-      html: '<p>SK Polymers collects only the information you choose to send us through the enquiry form, by email, phone or WhatsApp — typically your name, contact details and the details of your requirement.</p>' +
-            '<h3>How we use it</h3><p>We use your information solely to respond to your enquiry, prepare quotations and fulfil orders. We do not sell or rent your details to third parties.</p>' +
-            '<h3>Third-party content</h3><p>This site embeds a Google Maps frame to show our location. Google may set its own cookies when that frame loads; please refer to Google’s privacy policy for details.</p>' +
-            '<h3>Retention and access</h3><p>Enquiry correspondence is retained only as long as needed for business and statutory record-keeping. To request a copy of your data or its deletion, email <a href="mailto:sonipandey82385@gmail.com">sonipandey82385@gmail.com</a>.</p>'
-    },
-    terms: {
-      title: 'Terms of Use',
-      html: '<p>The content of this website is provided for general information about SK Polymers’ products and manufacturing services.</p>' +
-            '<h3>Product information</h3><p>Specifications, grades, dimensions and lead times shown here are indicative. Confirmed specifications and pricing are provided in a written quotation for your specific requirement.</p>' +
-            '<h3>Material suitability</h3><p>Guidance on grade selection is offered in good faith. Final responsibility for verifying that a material suits your application, operating conditions and regulatory requirements rests with the buyer.</p>' +
-            '<h3>Intellectual property</h3><p>All text, imagery and technical illustrations on this site remain the property of SK Polymers unless stated otherwise.</p>' +
-            '<h3>Contact</h3><p>Questions about these terms: <a href="mailto:sonipandey82385@gmail.com">sonipandey82385@gmail.com</a>.</p>'
-    }
-  };
-
-  var legalModal   = $('#legalModal');
-  var legalTitle   = $('#legalTitle');
-  var legalContent = $('#legalContent');
-  var legalReturnFocus = null;
-
-  $$('[data-legal]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var data = LEGAL[btn.getAttribute('data-legal')];
-      if (!data || !legalModal) return;
-      legalReturnFocus = document.activeElement;
-      legalTitle.textContent = data.title;
-      legalContent.innerHTML = data.html;
-      openDialog(legalModal);
-    });
-  });
-  if (legalModal) {
-    $$('[data-close-legal]', legalModal).forEach(function (el) {
-      el.addEventListener('click', function () {
-        closeDialog(legalModal, function () {
-          if (legalReturnFocus && document.contains(legalReturnFocus)) legalReturnFocus.focus();
-        });
-      });
-    });
-    legalModal.addEventListener('keydown', function (e) { trapFocus(e, legalModal); });
-  }
-
   /* ── global escape handling ─────────────────────────── */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (lightbox && !lightbox.hidden) closeLightbox();
-    else if (pModal && !pModal.hidden) closeProduct();
-    else if (legalModal && !legalModal.hidden) {
-      closeDialog(legalModal, function () {
-        if (legalReturnFocus && document.contains(legalReturnFocus)) legalReturnFocus.focus();
-      });
-    } else if (mobileNav && !mobileNav.hidden) closeNav();
+    else if (mobileNav && !mobileNav.hidden) closeNav();
   });
-
-  /* ── testimonials carousel ──────────────────────────── */
-  var track = $('#testimonialTrack');
-  if (track) {
-    var slides   = $$('.testimonial', track);
-    var dotsWrap = $('#testiDots');
-    var index    = 0;
-    var timer    = null;
-    var DELAY    = 6000;
-
-    slides.forEach(function (slide, i) {
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
-      if (i === 0) dot.setAttribute('aria-current', 'true');
-      dot.addEventListener('click', function () { goTo(i); restart(); });
-      dotsWrap.appendChild(dot);
-    });
-
-    function goTo(i) {
-      index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(' + (-index * 100) + '%)';
-      $$('button', dotsWrap).forEach(function (dot, di) {
-        if (di === index) dot.setAttribute('aria-current', 'true');
-        else dot.removeAttribute('aria-current');
-      });
-      slides.forEach(function (slide, si) { slide.setAttribute('aria-hidden', si === index ? 'false' : 'true'); });
-    }
-
-    function start() {
-      if (reduceMotion.matches || slides.length < 2) return;
-      stop();
-      timer = window.setInterval(function () { goTo(index + 1); }, DELAY);
-    }
-    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
-    function restart() { stop(); start(); }
-
-    $('#testiPrev').addEventListener('click', function () { goTo(index - 1); restart(); });
-    $('#testiNext').addEventListener('click', function () { goTo(index + 1); restart(); });
-
-    var carousel = $('#testimonialCarousel');
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
-    carousel.addEventListener('focusin', stop);
-    carousel.addEventListener('focusout', start);
-
-    var startX = null;
-    carousel.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; stop(); }, { passive: true });
-    carousel.addEventListener('touchend', function (e) {
-      if (startX !== null) {
-        var dx = e.changedTouches[0].clientX - startX;
-        if (Math.abs(dx) > 46) goTo(index + (dx < 0 ? 1 : -1));
-        startX = null;
-      }
-      start();
-    }, { passive: true });
-
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) { if (entry.isIntersecting) start(); else stop(); });
-      }, { threshold: 0.25 }).observe(carousel);
-    } else {
-      start();
-    }
-    goTo(0);
-  }
 
   /* ── FAQ accordion ──────────────────────────────────── */
   var faqButtons = $$('.faq-q');
@@ -684,41 +489,50 @@
       statusEl.className = 'form-status';
 
       window.setTimeout(function () {
-        submitEnquiry();
+        var draft = buildEnquiry();
+        track('enquiry_email_opened', { product: draft.product || 'none', page_path: location.pathname });
+        window.location.href = 'mailto:' + form.getAttribute('data-mailto') + '?subject=' +
+          encodeURIComponent(draft.subject) + '&body=' + encodeURIComponent(draft.body);
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
-        statusEl.textContent = 'Enquiry ready — your email app should open now. If it does not, call +91 91529 95667 or message us on WhatsApp.';
+
+        // Nothing has been sent yet — the visitor still has to press Send in their email app — so the
+        // message says exactly that, keeps the form filled in, and offers WhatsApp with the same text.
         statusEl.className = 'form-status ok';
-        form.reset();
-        Object.keys(rules).forEach(function (id) {
-          var input = document.getElementById(id);
-          var field = input ? input.closest('.field') : null;
-          if (field) field.classList.remove('invalid');
-        });
-      }, 700);
+        statusEl.textContent = 'Your email app should now open with the enquiry filled in — please press Send there to deliver it. If no email app opened, ';
+        var wa = document.createElement('a');
+        wa.href = 'https://wa.me/' + form.getAttribute('data-whatsapp') + '?text=' + encodeURIComponent(draft.subject + '\n\n' + draft.body);
+        wa.target = '_blank';
+        wa.rel = 'noopener';
+        wa.textContent = 'send the same enquiry on WhatsApp';
+        statusEl.appendChild(wa);
+        statusEl.appendChild(document.createTextNode(' or call ' + form.getAttribute('data-phone') + '.'));
+      }, 500);
     });
 
-    /* No backend on GitHub Pages: hand the enquiry to the visitor's mail client.
-       Replace this function (and set form.action) to post to Formspree or your own endpoint. */
-    function submitEnquiry() {
+    /* No backend: the enquiry is handed to the visitor's mail client (see submit handler).
+       To receive submissions server-side later, POST the same fields to a form service instead. */
+    function buildEnquiry() {
       var value = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      var subject = 'PTFE Enquiry — ' + (value('f-product') || 'General') + ' — ' + value('f-name');
+      var productLabel = productSelect && productSelect.value ? productSelect.options[productSelect.selectedIndex].text : '';
+      var subject = 'PTFE Enquiry — ' + (productLabel || 'General') + ' — ' + value('f-name') + (value('f-company') ? ' (' + value('f-company') + ')' : '');
       var body = [
         'Name: ' + value('f-name'),
+        'Company: ' + (value('f-company') || '—'),
         'Phone: ' + value('f-phone'),
         'Email: ' + value('f-email'),
-        'Product / Service: ' + (value('f-product') || '—'),
+        'Product / Service: ' + (productLabel || '—'),
         'Quantity: ' + (value('f-qty') || '—'),
         '',
         'Requirement:',
-        value('f-message')
+        value('f-message'),
+        '',
+        'Sent from: ' + location.href.split('?')[0]
       ].join('\n');
-
-      window.location.href = 'mailto:sonipandey82385@gmail.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      return { subject: subject, body: body, product: productSelect ? productSelect.value : '' };
     }
   }
 
-  /* initial paint */
-  onScroll();
+  /* initial state — read layout on the next frame instead of forcing a synchronous reflow during start-up */
+  window.requestAnimationFrame(onScroll);
 })();
