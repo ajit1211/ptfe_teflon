@@ -14,7 +14,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, unlinkSync, rmdirSync } from 'node:fs';
 import { dirname, join, relative, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { SITE } from './src/config.mjs';
+import { SITE, INTEGRATIONS } from './src/config.mjs';
 import { renderPage, resetFaqCounter } from './src/layout.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -107,6 +107,8 @@ Allow: /
 
 Sitemap: ${SITE.url}/sitemap.xml
 `);
+
+if (INTEGRATIONS.indexNowKey) write(`${INTEGRATIONS.indexNowKey}.txt`, INTEGRATIONS.indexNowKey);
 
 /* ── vercel.json ────────────────────────────────────────── */
 const siteHost = new URL(SITE.url).host;

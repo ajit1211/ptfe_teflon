@@ -12,6 +12,8 @@ const SITE_URL = (process.env.SITE_URL || 'https://skpolymers.vercel.app').repla
 export const SITE = {
   url: SITE_URL,
   name: 'SK Polymers',
+  // Other spellings people search for; used as alternateName in structured data (Google site names).
+  alternateNames: ['SK Polymer'],
   locale: 'en_IN',
   lang: 'en-IN',
   // Hosts that should permanently redirect to SITE.url once it moves to a custom domain.
@@ -60,6 +62,9 @@ export const INTEGRATIONS = {
   gaMeasurementId: process.env.GA_MEASUREMENT_ID || '',          // e.g. from GA4 → Admin → Data streams
   googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION || '', // content value of the GSC HTML-tag method
   bingSiteVerification: process.env.BING_SITE_VERIFICATION || '',
+  // IndexNow key (public by design — it is published as /<key>.txt). Lets Bing, Yandex and other
+  // IndexNow engines be told about new or changed URLs: node scripts/indexnow.mjs
+  indexNowKey: 'ddfe6124b2bade0ada9122bfb897a76c',
 };
 
 export const WA_DEFAULT_TEXT = 'Hello SK Polymers, I have a PTFE requirement.';

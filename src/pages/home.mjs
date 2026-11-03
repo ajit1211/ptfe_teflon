@@ -27,7 +27,7 @@ const GALLERY = [
 
 export default {
   path: '',
-  title: 'PTFE & Teflon Products Manufacturer in India | SK Polymers',
+  title: 'SK Polymers | PTFE & Teflon Products Manufacturer in India',
   description: 'SK Polymers manufactures PTFE (Teflon) sheets, rods, tubes, gaskets, bushes, seals and CNC-machined parts on the Kalyan–Bhiwandi Bypass, Maharashtra. Get a quote.',
   updated: '2026-11-03',
   gallery: true,
